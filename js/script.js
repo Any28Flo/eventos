@@ -32,4 +32,7 @@ function twitNuevo(){
   var duenoTwit= document.getElementById("deQuien").value;
   seccionTwit.innerText=comentario;
   tuitStar.innerText="De: "+duenoTwit;
+  cometwit.value="";
+  deQuien.value="";
+  contadorLetras=0;
 }
