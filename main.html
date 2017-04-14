@@ -8,33 +8,38 @@
     <!-- seccion nuevo comentario -->
     <article>
       <!-- seccion contador -->
-      <section id="contador" >
-        contador
-      </section>
+      <div >
+        Contador de clicks:
+        <a id= "contador">0
+        </a>
+      </div>
       <!-- Nombre del editor -->
       <section>
         <h1><strong> TUBI TWITER</strong> </h1>
       </section>
-      <{}
+
       <section>
-        <textarea  rows="4" cols="50" id="cometwit" onkeydown="cuentaLetras();">
+        <textarea  rows="4" cols="50" id="cometwit">
         </textarea>
-        <span id="contadorLetras">
+        <span >
           De:
+          <input type="text" id="deQuien">
+        </span>
+        <span id="contadorLetras">
+          0
         </span>
         <span>
-          /400
+          /140
         </span>
-        <input type="text">
-        contador
-        <button> Enviar</button>
+
+        <button id="enviarComentario" > Enviar</button>
         <hr>
       </section>
     </article>
 
     <!--seccion lista comentario  -->
 
-    <article>
+    <article id="listaComentarios">
     </article>
     <script src="js/script.js "> </script>
   </body>

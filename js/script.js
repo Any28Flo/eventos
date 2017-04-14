@@ -1,26 +1,39 @@
 var contador=0 ;
 var contadorLetras= 0 ;
-function contadorClic(){
-  document.getElementById("body").addEventListener("click",cuentaCaracteres);
-
-  //document.getElementById("myBtn").addEventListener("click", displayDate);
-}
-
-function cuentaCaracteres(){
-
+document.addEventListener("click",cuentaClicks);
+var contadorCaracteres= document.getElementById("cometwit");
+contadorCaracteres.addEventListener("keydown",cuentaLetras);
+var btnComentario=document.getElementById("enviarComentario");
+function cuentaClicks(){
   contador++;
-  console.log(contador);
-  document.getElementById("contador").innerHTML = contador;
-}
-function cuentaTwit(){
-  document.getElementById("cometwit").addEventListener("onkeypress",cuentaLetras);
-
+  var contadorClicks= document.getElementById("contador");
+  contadorClicks.innerText= contador;
 }
 function cuentaLetras(){
-
   contadorLetras++;
-  console.log(contadorLetras);
-  document.getElementById('contadorLetras').innerHTML = contadorLetras;
+  var contadorCaracteres= document.getElementById("contadorLetras");
+  // console.log(contadorLetras);
+  if(contadorLetras >=140)
+  {
+    btnComentario.disabled=true;
+    contadorCaracteres.style.color="red"; 
+  }
 
+  contadorCaracteres.innerHTML=contadorLetras;
 }
-contadorClic();
+
+function creaComentario(){
+  var nodoPadre = document.getElementById("listaComentarios");
+  var creaComentario= document.createElement("div");
+
+  var texto = document.getElementById("cometwit").value;
+  var deQuien = document.getElementById("deQuien").value;
+
+  document.createTextNode(deQuien);
+  var nodoTexto = document.createTextNode(texto);
+
+  nodoPadre.appendChild(creaComentario);
+  creaComentario.appendChild(nodoTexto);
+  creaComentario.appendChild(twitstar);
+}
+//contadorClic();
